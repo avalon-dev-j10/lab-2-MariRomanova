@@ -19,7 +19,7 @@ public interface Point {
      *
      * 2. При необходимости, дополните структуру интерфеса.
      */
-
+    float point [] = new float [2];
 
     /**
      * Возвращает абсциссу точки.
@@ -31,7 +31,10 @@ public interface Point {
      *
      * @see <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D1%81%D1%86%D0%B8%D1%81%D1%81%D0%B0">Абсцисса</a>
      */
-    float getX();
+
+    static float getX(float point[]){
+        return point[0];
+    };
 
     /**
      * Возвращает ординату точки.
@@ -43,5 +46,15 @@ public interface Point {
      *
      * @see <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0">Ордината</a>
      */
-    float getY();
+    static float getY(float point []) {
+        return point[1];
+    }
+
+    static float getLength(float X1, float Y1, float X2, float Y2) {
+
+        float length = (float) Math.sqrt((float)Math.pow((X2-X1),2) + (float)Math.pow((Y2-Y1),2));
+        return length;
+
+    }
+
 }

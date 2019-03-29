@@ -1,4 +1,5 @@
 package ru.avalon.java.dev.j10.labs.shapes;
+import java.awt.*;
 
 /**
  * Абстрактное представление о геометрической фигуре.
@@ -35,7 +36,12 @@ public interface Shape {
      *
      * @see <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D1%84%D0%B8%D0%B3%D1%83%D1%80%D1%8B">Площадь фигуры</a>
      */
-    float getArea();
+//    default float getArea(float a){
+//        return 0;
+//    };
+    default float getArea(){
+        return 0;
+    };
 
     /**
      * Возвращает угол поворота фигуры.
@@ -48,7 +54,14 @@ public interface Shape {
      *
      * @return угол поворота фигуры.
      */
-    int getRotation();
+    default int getRotation(){
+        return 0;
+    };
+
+    default int getRotation(Rectangle rectangleTurned, Rectangle rectangleOriginal){
+        return 0;
+    };
+
 
     /*
      * TODO: изменить определение метотода 'getRotation()'
